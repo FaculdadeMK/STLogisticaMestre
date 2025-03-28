@@ -19,6 +19,8 @@ int main() {
   int resultado1 , resultado2;
   int empate , empate2;
 
+   //Entrada de dadaos da Carta 1
+
   printf("Digite o nome de um estado: ");
   scanf("%s", &estado);
   printf("Digite o codigo da carta: ");
@@ -33,6 +35,8 @@ int main() {
   scanf("%f", &pib);
   printf("Digite a quantidade de pontos turisticos: ");
   scanf("%d", &pontos);
+
+   //Entrada de Dados da Carta 2
 
   printf("Digite o nome de um estado: ");
   scanf("%s", &estado2);
@@ -49,6 +53,8 @@ int main() {
   printf("Digite a quantidade de pontos turisticos: ");
   scanf("%d", &pontos2);
 
+  //Calculos Da Densidade Populacional, PIB per Capita, Super Poder e o ''empate'' variavel que identifica se a comparação de um ou ambos os atributos deu empate.
+
   pibc = pib * 1000000000;
   pibc2 = pib2 * 1000000000;
 
@@ -63,6 +69,8 @@ int main() {
   superpoder = populaçao + area + pib + pontos + capita + (1 / densidade);
   superpoder2 = populaçao2 + area2 + pib2 + pontos2 + capita2 + (1 / densidade2);
 
+    //Saída de Dados Da Carta 1
+
   printf("\n Carta 1: \n");
   printf("Estado: %s \n", estado);
   printf("Codigo da Carta: %s \n", codigo);
@@ -74,6 +82,8 @@ int main() {
   printf("Densidade Populacional: %.2f hab/km² \n", densidade);
   printf("PIB per Capita: %.2f reais \n", capita);
   printf("Super Poder: %.2f \n", superpoder);
+
+    //Saída de Dados Da Carta 2
   
   printf("\n Carta 2: \n");
   printf("Estado: %s \n", estado2);
@@ -87,6 +97,8 @@ int main() {
   printf("PIB per Capita: %.2f reais \n", capita2);
   printf("Super Poder: %.2f \n", superpoder2);
 
+  //Menu para Escolha do Primeiro Atributo da Comparação
+
   printf("\nEscolha o Primeiro Atributo a Ser Comparado: \n");
   printf("1.População \n");
   printf("2.Área \n");
@@ -96,7 +108,8 @@ int main() {
   printf("6.PIB per Capita \n");
   printf("7.Super Poder \n\n");
   scanf("%d", &opcao);
-
+  
+  //Switch Responsavel Por Fazer a Comparação e Print do Resultado
 
   switch (opcao){
    case 1:
@@ -213,7 +226,9 @@ int main() {
      printf("Opção Invalida");
      break;
   }
-  
+
+    //Menu para Escolha do Segundo Atributo da Comparação
+
   printf("\nEscolha o Segundo Atributo a Ser Comparado: \n");
   printf("1.População \n");
   printf("2.Área \n");
@@ -223,6 +238,8 @@ int main() {
   printf("6.PIB per Capita \n");
   printf("7.Super Poder \n\n");
   scanf("%d", &opcao2);
+
+  //Switch Responsavel Por Fazer a Comparação e Print do Resultado e Também Encerrar Caso escolham o mesmo atributo
 
   if (opcao == opcao2){
      printf("Você Escolheu o Mesmo Atributo!");
@@ -345,6 +362,10 @@ int main() {
    }
 
    printf("\n\nResultado Final: \n");
+
+   //If que exibe o resultado da comparação dos dois atributos, devido a problemas foi necessario criar
+   //uma variavel chamada ''empate'' para identificar quando a comparação deu igual a um empate assim exibindo resultados com mais precisão.
+   //Exemplo: Empate! e Carta 1 vence significa que a Carta 1 venceu, dois Empates significa que houve um empate, assim por diante
 
    if (resultado1 && resultado2 | resultado1 == 1 & empate2 == 1)
    {
