@@ -17,6 +17,7 @@ int main() {
   float superpoder , superpoder2;
   int opcao , opcao2;
   int resultado1 , resultado2;
+  int empate , empate2;
 
   printf("Digite o nome de um estado: ");
   scanf("%s", &estado);
@@ -55,6 +56,9 @@ int main() {
   densidade2 = (float)populaçao2 / area2;
   capita = pibc / (float)populaçao;
   capita2 = pibc2 / (float)populaçao2;
+
+  empate = 5;
+  empate2 = 6;
 
   superpoder = populaçao + area + pib + pontos + capita + (1 / densidade);
   superpoder2 = populaçao2 + area2 + pib2 + pontos2 + capita2 + (1 / densidade2);
@@ -105,7 +109,8 @@ int main() {
       printf("Carta 1 Vence!\n");
     } else if (populaçao < populaçao2) {
       printf("Carta 2 Vence!\n");
-    } else {
+    } else 
+    { empate = 1;
       printf("Empate!\n");
     }
     break;
@@ -121,6 +126,7 @@ int main() {
     } else if (area < area2) {
         printf("Carta 2 Vence!\n");
       } else {
+        empate = 1;
         printf("Empate!\n");
       }
     break;
@@ -136,6 +142,7 @@ int main() {
     } else if (pib < pib2) {
         printf("Carta 2 Vence!\n");
       } else {
+        empate = 1;
         printf("Empate!\n");
       }
     break;
@@ -151,6 +158,7 @@ int main() {
     } else if (pontos < pontos2) {
         printf("Carta 2 Vence!\n");
       } else {
+        empate = 1;
         printf("Empate!\n");
       }
     break;
@@ -166,6 +174,7 @@ int main() {
     } else if (densidade > densidade2) {
         printf("Carta 2 Vence!\n");
       } else {
+        empate = 1;
         printf("Empate!\n");
       }
     break;
@@ -180,6 +189,7 @@ int main() {
     } else if (capita < capita2) {
         printf("Carta 2 Vence!\n");
       } else {
+        empate = 1;
         printf("Empate!\n");
       }
     break;
@@ -194,6 +204,7 @@ int main() {
     } else if (superpoder < superpoder2) {
         printf("Carta 2 Vence!\n");
       } else {
+        empate = 1;
         printf("Empate!\n");
       }
     break;
@@ -229,6 +240,7 @@ int main() {
      } else if (populaçao < populaçao2) {
        printf("Carta 2 Vence!");
      } else {
+      empate2 = 1;
        printf("Empate!");
      }
      break;
@@ -244,6 +256,7 @@ int main() {
      } else if (area < area2) {
          printf("Carta 2 Vence!");
        } else {
+        empate2 = 1;
          printf("Empate!");
        }
      break;
@@ -259,6 +272,7 @@ int main() {
      } else if (pib < pib2) {
          printf("Carta 2 Vence!");
        } else {
+        empate2 = 1;
          printf("Empate!");
        }
      break;
@@ -274,6 +288,7 @@ int main() {
      } else if (pontos < pontos2) {
          printf("Carta 2 Vence!");
        } else {
+        empate2 = 1;
          printf("Empate!");
        }
      break;
@@ -289,6 +304,7 @@ int main() {
      } else if (densidade > densidade2) {
          printf("Carta 2 Vence!");
        } else {
+        empate2 = 1;
          printf("Empate!");
        }
      break;
@@ -303,6 +319,7 @@ int main() {
      } else if (capita < capita2) {
          printf("Carta 2 Vence!");
        } else {
+        empate2 = 1;
          printf("Empate!");
        }
      break;
@@ -317,6 +334,7 @@ int main() {
      } else if (superpoder < superpoder2) {
          printf("Carta 2 Vence!");
        } else {
+        empate2 = 1;
          printf("Empate!");
        }
      break;
@@ -328,18 +346,21 @@ int main() {
 
    printf("\n\nResultado Final: \n");
 
-   if (resultado1 && resultado2){
-     
-     printf("Carta 1 Venceu a Comparação de Atributos!");
-
-   }else if (resultado1 != resultado2)
+   if (resultado1 && resultado2 | resultado1 == 1 & empate2 == 1)
    {
-    printf("Houve um Empate na Comparação de Atributos!");
-   } else {
+    printf("Carta 1 Venceu a Comparação de Atributos!");
+   }
+    else if (empate == empate2 | empate != 1 & empate2 != 1 & resultado1 != resultado2)
+   {
+     printf("Houve um Empate na Comparação de Atributos!");
+   }
+   else if (resultado1 == 0 & resultado2 == 0)
+   {
     printf("Carta 2 Venceu a Comparação de Atributos!");
+   } else if (empate == 1 & resultado2 == 1 ){
+     printf("Carta 1 Venceu a Comparação de Atributos!");
    }
    
-
   } 
 
 }
